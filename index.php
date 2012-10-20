@@ -150,9 +150,9 @@ echo($_SESSION['status']);
 unset($_SESSION['status']);
 ?>
 
-	<div class="but-div" id="round-back">
-<a class="round">Test</a>
-	</div>
+
+<a class="round">Click Me</a>
+
 </div>
 <div class="footer">
 	<div class="footer_content">
