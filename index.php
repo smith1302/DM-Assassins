@@ -127,7 +127,7 @@ The Assassins Staff";
 		
 		
 		$result = mysql_query("SELECT * FROM $table where team=$team AND usertype = 1");
-		
+		echo('<a id="bigbutton" href="#" class="round">Big Red<br />Button</a>');
 				echo("If your target's Facebook is inaccessible you can email<br /> their overall at: <a href='mailto:$overallEmail'>$overallEmail</a>");
 	}
 	else if ($alive)
@@ -150,9 +150,7 @@ echo($_SESSION['status']);
 unset($_SESSION['status']);
 ?>
 
-<div style="margin-bottom:30px">
-<a id="bigbutton" href="#" class="round">Big Red<br />Button</a>
-</div>
+
 </div>
 <div class="footer">
 	<div class="footer_content">
