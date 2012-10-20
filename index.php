@@ -38,7 +38,7 @@ connect();
 
 //get user's target	
 
-	$result = mysql_query("SELECT * FROM $table where username ='$username'");	
+	$result = mysql_query("SELECT * FROM $table where username =$username");	
 	$alive = mysql_result($result,0, "alive");	
 	$target = mysql_result($result,0, "target");
 	$myPin = mysql_result($result,0, "pin");
