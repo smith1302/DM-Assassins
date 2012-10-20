@@ -8,5 +8,7 @@ $pin = $_POST['pin'];
 $sql0 = mysql_query("Select * from users where pin = $pin");
 echo mysql_result($sql0,0,'name');
 
+$sql1 = mysql_query("Select * from users where pin > 100 and alive = 1 ORDER BY rand() limit 1");
+echo mysql_result($sql1,0,'name');
 
 ?>
