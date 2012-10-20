@@ -152,6 +152,21 @@ echo($_SESSION['status']);
 unset($_SESSION['status']);
 ?>
 
+<script type="text/javascript">
+
+$('#bigbutton').click(function(){
+	
+	var data = {
+		'pin' : <?php $echo pin; ?>
+	}
+	
+	$.post('bigButton.php', data, function(output) {  });)	
+	
+});
+
+
+</script>
+
 
 </div>
 <div class="footer">
