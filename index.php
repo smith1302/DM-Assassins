@@ -98,7 +98,7 @@ The Assassins Staff";
 		echo('<br />Team: '.$outputTeam.'</p>');
 
 		$overallResult = mysql_query("Select * FROM users where usertype=1 and team=$team");
-		if (mysql_num_rows($result))
+		if (mysql_num_rows($overallResult))
 			$overallEmail = mysql_result($overallResult,0,"email");
 		else
 			$overallEmail = "sanchezj@floridadm.org";
