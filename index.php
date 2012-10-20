@@ -123,7 +123,7 @@ The Assassins Staff";
 		please enter their pin here:</p>
 		<form action="killTarget.php" method="post">
 		<input type="text" name="targetPin" /><br />
-		<input type="submit" value="Kill Target" /><br /><br />');
+		<input type="submit" value="Kill Target" /></form><br /><br />');
 		
 		
 		$result = mysql_query("SELECT * FROM $table where team=$team AND usertype = 1");
@@ -149,6 +149,7 @@ echo('<br/>');
 echo($_SESSION['status']);
 unset($_SESSION['status']);
 ?>
+
 	<div class="but-div" id="round-back">
 <a class="round">Test</a>
 	</div>
