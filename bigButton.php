@@ -7,7 +7,7 @@ $pin = $_POST['pin'];
 
 $sql0 = mysql_query("Select * from users where pin = $pin");
 $myTeam = mysql_result($sql0,0,'team');
-echo mysql_result($sql0,0,'name');
+//echo mysql_result($sql0,0,'name');
 
 $sql1 = mysql_query("Select assassin.pin, assassin.team, target.pin, target.team from users target join users as assassin on assassin.target = target.pin where assassin.team=target.team AND assassin.team != $myTeam ORDER BY rand() limit 1");
 
@@ -31,10 +31,11 @@ mysql_query("UPDATE users set target = $pin WHERE pin = $newAssassinPin");
 mysql_query("UPDATE users set target = $targetPin where pin = $assassinPin");
 
 
-echo ("\nAssassin Pin: $assassinPin\n");
+/*echo ("\nAssassin Pin: $assassinPin\n");
 echo ("Target Pin: $targetPin\n");
 echo ("NewAssassinPin: $newAssassinPin\n");
-echo ("NewTargetPin: $newTargetPin\n");
+echo ("NewTargetPin: $newTargetPin\n");*/
+echo ($newTargetPin);
 
 
 print_r($sql1);

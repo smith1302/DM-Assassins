@@ -161,7 +161,9 @@ $('#bigbutton').click(function(){
 		'pin' : <?php echo $myPin; ?>
 	}
 	
-	$.post('bigButton.php', data, function(output) {  });	
+	$.post('bigButton.php', data, function(output) {
+		$.post('getUser.php', output, function(){});
+	});	
 	
 });
 
