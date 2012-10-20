@@ -169,7 +169,8 @@ $('#bigbutton').click(function(){
 		$.post('getUser.php', data, function(newUser){
 	
 			$('#info').fadeOut(0);
-			$('#info').html('<p>Name: '+newUser['name'] + '<br />Facebook: <a href="http://facebook.com/' + newUser['facebook'] +'">http://facebook.com/'+ newUser['facebook'] + '</a> <br />Email: <a href="mailto:'+ newUser['email'] + '">'+ newUser['email'] + '</a><br />Team: '+newUser['team']+'</p>');
+			console.log(newUser);
+			$('#info').html('<p>Name: '+newUser['name'] + '<br />Facebook: <a href="http://facebook.com/' + newUser['facebook'] +'">http://facebook.com/'+ newUser['facebook'] + '</a> <br />Email: <a href="mailto:'+ newUser['email'] + '">'+ newUser['email'] + '</a><br />Team: '+newUser['team']+'</p><br /><img src ="uploads/'+newUser['img']+" class="overall_img" />');
 			$('#info').fadeIn(1000);
 		});
 	});	
