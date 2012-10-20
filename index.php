@@ -127,7 +127,7 @@ The Assassins Staff";
 		
 		
 		$result = mysql_query("SELECT * FROM $table where team=$team AND usertype = 1");
-		echo('<a id="bigbutton" href="#" class="round">Big Red<br />Button</a>');
+		echo('<a id="bigbutton" href="#" class="round">Big Red<br />Button</a><br />');
 				echo("If your target's Facebook is inaccessible you can email<br /> their overall at: <a href='mailto:$overallEmail'>$overallEmail</a>");
 	}
 	else if ($alive)
