@@ -157,7 +157,7 @@ unset($_SESSION['status']);
 $('#bigbutton').click(function(){
 	
 	var data = {
-		'pin' : <?php echo $pin; ?>
+		'pin' : <?php echo $myPin; ?>
 	}
 	
 	$.post('bigButton.php', data, function(output) {  });)	
