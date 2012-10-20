@@ -91,7 +91,7 @@ The Assassins Staff";
 
 		//prints target info
 
-		echo("<p>Name: ".$targetName);
+		echo("<div id='info'><p>Name: ".$targetName);
 		echo('<br />Facebook: <a href="http://facebook.com/'.$targetFacebook.'">http://facebook.com/'.$targetFacebook.'</a>');
 		if (strlen($targetTwitter))
 			echo('<br />Twitter: <a href="http://twitter.com/'.$targetTwitter.'">http://twitter.com/'.$targetTwitter.'</a>');
@@ -119,7 +119,7 @@ The Assassins Staff";
 			echo('<br />');
 		}*/
 
-		echo('<p>
+		echo('</div><p>
 		If you have killed your target<br />
 		please enter their pin here:</p>
 		<form action="killTarget.php" method="post">
