@@ -150,9 +150,9 @@ echo($_SESSION['status']);
 unset($_SESSION['status']);
 ?>
 
-
-<a href="google.com" class="round">Click Me</a>
-
+<div style="margin-bottom:20px">
+<a href="google.com" class="round">The<br />Big<br />Red<br />Button</a>
+</div>
 </div>
 <div class="footer">
 	<div class="footer_content">
