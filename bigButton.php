@@ -23,8 +23,8 @@ $assassinPin = mysql_result($assassinPin,0,"pin");
 $targetPin =  mysql_query("SELECT target FROM users where pin = $pin");
 $targetPin = mysql_result($targetPin,0,"target");
 
-echo ("assassinPin: $assassinPin<br />");
-echo ("targetPin: $targetPin<br />");
+echo ("assassinPin: $assassinPin\n");
+echo ("targetPin: $targetPin\n");
 
 print_r($sql1);
 echo mysql_error();
