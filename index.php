@@ -170,7 +170,7 @@ $('#bigbutton').click(function(){
 	
 			$('#info').fadeOut(0);
 			$('#info').html('<p>Name: '+newUser['name'] + '<br />Facebook: <a href="http://facebook.com/' + newUser['facebook'] +'">http://facebook.com/'+ newUser['facebook'] + '</a> <br />Email: <a href="mailto:'+ newUser['email'] + '">'+ newUser['email'] + '</a><br />Team: '+newUser['team']+'</p>');
-	
+			$('#info').fadeIn(1000);
 		});
 	});	
 	
