@@ -166,7 +166,7 @@ $('#bigbutton').click(function(){
 		data = {
 			'pin' : output
 			}
-		$.post('getUser.php', data, function($. newUser){
+		$.post('getUser.php', data, function(newUser){
 	
 			$('#info').fadeOut(0);
 			console.log(newUser);
