@@ -34,7 +34,7 @@ mysql_query("UPDATE users set target = $newTargetPin, showbutton = 0 WHERE pin =
 mysql_query("UPDATE users set target = $pin, changed = 1 WHERE pin = $newAssassinPin");
 mysql_query("UPDATE users set target = $targetPin where pin = $assassinPin");
 
-$result =  mysql_query("SELECT * FROM $table where pin = $assassinPin");
+$result =  mysql_query("SELECT * FROM users where pin = $assassinPin");
 $name = mysql_result($result,0,"name");
 $email = mysql_result($result,0,"email");
 
@@ -51,7 +51,7 @@ The Gamemaker";
 
 	mail($email, $subject, $message, $headers);
 
-$result =  mysql_query("SELECT * FROM $table where pin = $newAssassinPin");
+$result =  mysql_query("SELECT * FROM users where pin = $newAssassinPin");
 $name = mysql_result($result,0,"name");
 $email = mysql_result($result,0,"email");
 
