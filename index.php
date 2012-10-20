@@ -39,7 +39,6 @@ connect();
 //get user's target	
 
 	$result = mysql_query("SELECT * FROM $table where username =$username");	
-	echo mysql_error();
 	$alive = mysql_result($result,0, "alive");	
 	$target = mysql_result($result,0, "target");
 	$myPin = mysql_result($result,0, "pin");
@@ -81,6 +80,7 @@ The Assassins Staff";
 		//get's target info from server
 		
 		$result = mysql_query("SELECT * FROM $table where pin = $target");
+		echo mysql_error();
 		$targetName = mysql_result($result,0,"name");
 		$targetFacebook = mysql_result($result,0,"facebook");
 		$targetEmail = mysql_result($result,0,"email");
