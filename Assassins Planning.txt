@@ -1,0 +1,70 @@
+mysql -h assassins.db.8611244.hostedresource.com -u assassins -p
+
+create table users(pin smallint(3) NOT NULL primary key , username text, password text, name text, email text, facebook text, team smallint(2), usertype smallint, killed smallint, alive bool, target smallint(3));
+
+create table tweets(pin smallint(3) NOT NULL AUTO_INCREMENT primary key , method text);
+
+Player Dashboard
+
+Current Target
+	Name
+	Facebook
+	Email
+	Team
+
+Change Personal info
+
+
+Player (Captains)
+	Database Traits
+		Name
+		Pin - 3 digits number auto assign, ask captains to memorize/write down/keep secret
+		Facebook
+		Alive/Dead
+		Team
+		Personally killed
+		Dead under
+		Login/PW
+
+	Panel
+		Current target
+		Previous targets
+		Number of people under them
+		Number of people personally killed
+	
+	Email
+		automatically email when killed.
+			tell them who to complain to if its wrong
+		automatically email when target changed
+
+	Killed
+		Enter target Pin
+		Where they were killed
+		Automatically gives their targets target.
+
+	Leader board (only shows people alive)
+		Name
+		Team
+		Number under
+		Number personally killed
+
+Admin (Overalls, each overall manages their own captains)
+	Database traits
+		Team
+		Login/PW
+
+	Confirm players emails/facebooks
+		can change email/facebook if necessary
+
+	Modify alive/dead
+		If falsely killed revive user and place them in between a assassin/target link
+		dead person gets target of random assassin
+		assassin gets target of dead person
+		inform assassin of change in target via email
+
+Super Admin Spratt/Steven/Me (Same as overall but can manage everyone)
+
+Kill Feed/Twitter feed
+	Set of ways someone can die (Funny)
+	Randomly picks one and inserts name and location
+	Posts on twitter account for captains to follow.

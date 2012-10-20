@@ -1,0 +1,114 @@
+<?php
+	include_once("connectToServer.php");
+	connect();
+
+	require_once('Mailer/class.phpmailer.php');
+	include_once("getTeam.php");
+	
+	$sql0 = "SELECT * FROM users WHERE mailed = 0";
+	$sql0 = mysql_query($sql0);
+	
+	while ($user = mysql_fetch_assoc($sql0))
+	{
+		$name = $user['name'];
+		$email = $user['email'];
+		$username = $user['username'];		
+		$pin = $user['pin'];
+		$target = $user['target'];		
+		$sql3 = "SELECT * FROM users WHERE pin = $target";
+		$sql3 = mysql_query($sql3);
+		/*$targetName = mysql_result($sql3, 0, 'name');
+		$targetTeam = mysql_result($sql3, 0, 'team');
+		$targetTeam = getTeam($targetTeam);*/
+		
+/*		$message = "<p>Hello $name,
+You have been assigned your first target. It is $targetName on the $targetTeam team.<br />
+You can log in to check his profile here:<br />
+<br />		
+<a href='http://assassins.dmcaptains.com'>http://assassins.dmcaptains.com</a><br /><br />
+UFID: $username<br />
+PIN: $pin<br />
+<br />
+FTK!<br />
+The Assassins Team<br />
+<br />		
+P.S. If you'd like to submit ideas for the <a href='http://twitter.com/dmassassins'>twitter feed</a>. You can submit them <a href='http://assassins.dmcaptains.com/waysYouCanDie.php'>here</a>.</p>
+		";*/
+		
+		$message = "<p>Tributes,</p>
+
+<p>The Gamemaker is disappointed with your performance. You may consider yourself lucky, or even skilled for making it out alive through the first quarter deaths. However we don't see it as such, we have decided that your pursuit of your current targets has failed. In response, the Gamemaker has decided upon a role reversal. These targets that you found so difficult to find, now target you. You may be thinking, \"I now know who targets me,\" but don't let this give you a false sense of security because you are not alone.</p>
+
+<p>You may log into the assassins website to see your new target.</p>
+
+<p>Good luck tributes, and may the odds be ever in your favor!</p>
+<p>-The Gamemaker</p>";
+
+/*		$headers  = 'MIME-Version: 1.0' . "\r\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		$headers .= 'From: assassins@floridadm.org' . "\r\n";*/
+		
+		
+		
+		#mail($email, "Assassins Information", $message, $headers);
+		
+		
+				
+		$mail             = new PHPMailer(); // defaults to using php "mail()"
+				
+		$mail->SetFrom('assassins@floridadm.org', 'Dance Marathon Assassins');
+		
+		$address = $email;//$email;
+		$mail->AddAddress($address);
+		
+		$mail->Subject    = "Plot Twist";
+		
+		$mail->AltBody = "Tributes,
+
+The Gamemaker is disappointed with your performance. You may consider yourself lucky, or even skilled for making it out alive through the first quarter deaths. However we don't see it as such, we have decided that your pursuit of your current targets has failed. In response, the Gamemaker has decided upon a role reversal. These targets that you found so difficult to find, now target you. You may be thinking, \"I now know who targets me,\" but don't let this give you a false sense of security because you are not alone.
+
+You may log into the assassins website to see your new target.
+
+Good luck tributes, and may the odds be ever in your favor!
+-The Gamemaker";
+		
+/*		$mail->AltBody    = "Hello $name,
+You have been assigned your first target. It is $targetName on the $targetTeam team.
+You can log in to check his profile here:
+
+http://assassins.dmcaptains.com
+UFID: $username
+PIN: $pin
+
+FTK!
+The Assassins Team
+
+P.S. If you'd like to submit ideas for the twitter feed, You can submit them at http://assassins.dmcaptains.com/waysYouCanDie.php";*/
+		
+		$mail->MsgHTML($message);
+		
+		
+		if(!$mail->Send()) {
+		  echo "Mailer Error: " . $mail->ErrorInfo;
+		} else {
+		  echo "Emailed: $name at $email, with ufid: $username and pin: $pin<br />";
+		  $sql1 = "update users set mailed = 1 where pin = $pin";
+		  mysql_query($sql1);
+		  }
+
+		#echo ("$message");
+
+	}
+
+
+
+?>
+
+<?php
+
+
+
+?>
+
+</body>
+</html>
