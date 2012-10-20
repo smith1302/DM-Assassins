@@ -162,7 +162,11 @@ $('#bigbutton').click(function(){
 	}
 	
 	$.post('bigButton.php', data, function(output) {
-		$.post('getUser.php', output, function(){});
+	
+		data = {
+			'pin' : output
+			}
+		$.post('getUser.php', data, function(){});
 	});	
 	
 });
