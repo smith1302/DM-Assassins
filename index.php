@@ -81,6 +81,7 @@ The Assassins Staff";
 		
 		$result = mysql_query("SELECT * FROM $table where pin = $target");
 		echo mysql_error();
+		echo $target;
 		$targetName = mysql_result($result,0,"name");
 		$targetFacebook = mysql_result($result,0,"facebook");
 		$targetEmail = mysql_result($result,0,"email");
