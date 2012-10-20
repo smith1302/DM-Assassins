@@ -33,8 +33,8 @@ mysql_query("UPDATE users set target = $targetPin where pin = $assassinPin");
 
 echo ("\nAssassin Pin: $assassinPin\n");
 echo ("Target Pin: $targetPin\n");
-echo ("NewAssassinPin: $assassinPin\n");
-echo ("NewTargetPin: $targetPin\n");
+echo ("NewAssassinPin: $newAssassinPin\n");
+echo ("NewTargetPin: $newTargetPin\n");
 
 
 print_r($sql1);
