@@ -19,7 +19,7 @@ if (mysql_num_rows($sql1) == 0)
 $sql1 = mysql_fetch_row($sql1);
 
 $newAssassinPin = $sql1[0];
-$newTargetPin = $sql1[3];
+$newTargetPin = $sql1[2];
 
 $assassinPin = mysql_query("SELECT pin FROM users where target = $pin");
 $assassinPin = mysql_result($assassinPin,0,"pin");
