@@ -20,7 +20,7 @@ include("dashboard.php");
 <body>
 
 <div class="container">
-nope
+
 <?php
 printDashboard(0);
 //get user info from cookies
