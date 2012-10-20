@@ -18,13 +18,24 @@ if (mysql_num_rows($sql1) == 0)
 
 $sql1 = mysql_fetch_row($sql1);
 
+$newAssassinPin = $sql1['assassin.pin'];
+$newTargetPin = $sql1['target.pin'];
+
 $assassinPin = mysql_query("SELECT pin FROM users where target = $pin");
 $assassinPin = mysql_result($assassinPin,0,"pin");
 $targetPin =  mysql_query("SELECT target FROM users where pin = $pin");
 $targetPin = mysql_result($targetPin,0,"target");
 
-echo ("assassinPin: $assassinPin\n");
-echo ("targetPin: $targetPin\n");
+mysql_query("UPDATE users set target = $newTargetPin WHERE pin = $pin");
+mysql_query("UPDATE users set target = $pin WHERE pin = $newAssassinPin");
+mysql_query("UPDATE users set target = $targetPin where pin = $assassinPin");
+
+
+echo ("\nAssassin Pin: $assassinPin\n");
+echo ("Target Pin: $targetPin\n");
+echo ("NewAssassinPin: $assassinPin\n");
+echo ("NewTargetPin: $targetPin\n");
+
 
 print_r($sql1);
 echo mysql_error();
