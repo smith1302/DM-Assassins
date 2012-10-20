@@ -151,7 +151,7 @@ unset($_SESSION['status']);
 ?>
 
 <div style="margin-bottom:20px">
-<a href="google.com" class="round">The<br />Big<br />Red<br />Button</a>
+<a href="google.com" class="round">The<br />Big Red<br />Button</a>
 </div>
 </div>
 <div class="footer">
