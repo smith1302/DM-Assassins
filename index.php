@@ -10,6 +10,7 @@ include("dashboard.php");
 
 <html>
 <head>
+
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Kameron:700,400' rel='stylesheet' type='text/css'>
 
@@ -148,6 +149,9 @@ echo('<br/>');
 echo($_SESSION['status']);
 unset($_SESSION['status']);
 ?>
+
+<a class="round">Test</a>
+
 </div>
 <div class="footer">
 	<div class="footer_content">
