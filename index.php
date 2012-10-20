@@ -151,7 +151,7 @@ unset($_SESSION['status']);
 ?>
 
 
-<a class="round">Click Me</a>
+<a href="google.com" class="round">Click Me</a>
 
 </div>
 <div class="footer">
