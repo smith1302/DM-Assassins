@@ -38,8 +38,8 @@ echo ("NewTargetPin: $newTargetPin\n");*/
 echo ($newTargetPin);
 
 
-print_r($sql1);
-echo mysql_error();
+//print_r($sql1);
+//echo mysql_error();
 
 
 ?>
