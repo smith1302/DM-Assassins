@@ -42,7 +42,7 @@ connect();
 	$alive = mysql_result($result,0, "alive");	
 	$target = mysql_result($result,0, "target");
 	$myPin = mysql_result($result,0, "pin");
-
+	$showButton = mysql_result($result,0, "showbutton");
 // in case of circular targetting
 /*	if ($target == $myPin)
 	{
@@ -128,9 +128,11 @@ The Assassins Staff";
 		
 		
 		$result = mysql_query("SELECT * FROM $table where team=$team AND usertype = 1");
-		echo('<div style="margin:-10px 0 20px 0">
-<div id="bigbutton" class="round">Big Red<br />Button</div>
-</div><br />');
+
+		if ($showButton)
+		{
+			echo('<div style="margin:-10px 0 20px 0"><div id="bigbutton" class="round">Big Red<br />Button</div></div><br />');
+		}
 				echo("If your target's Facebook is inaccessible you can email<br /> their overall at: <a href='mailto:$overallEmail'>$overallEmail</a>");
 	}
 	else if ($alive)

@@ -30,7 +30,7 @@ $assassinPin = mysql_result($assassinPin,0,"pin");
 $targetPin =  mysql_query("SELECT target FROM users where pin = $pin");
 $targetPin = mysql_result($targetPin,0,"target");
 
-mysql_query("UPDATE users set target = $newTargetPin WHERE pin = $pin");
+mysql_query("UPDATE users set target = $newTargetPin, showbutton = 0 WHERE pin = $pin");
 mysql_query("UPDATE users set target = $pin WHERE pin = $newAssassinPin");
 mysql_query("UPDATE users set target = $targetPin where pin = $assassinPin");
 
