@@ -150,8 +150,8 @@ echo($_SESSION['status']);
 unset($_SESSION['status']);
 ?>
 
-<div style="margin-bottom:20px">
-<a href="google.com" class="round">Big Red<br />Button</a>
+<div style="margin-bottom:30px">
+<a id="bigbutton" href="#" class="round">Big Red<br />Button</a>
 </div>
 </div>
 <div class="footer">
