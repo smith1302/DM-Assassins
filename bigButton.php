@@ -88,7 +88,7 @@ if (mysql_num_rows($test)!=0)
 }
 else
 {
-	mysql_query("UPDATE users set showbutton = 0 where pin = $pin");
+	mysql_query("UPDATE users set showbutton = 0");
 	echo 0;
 }
 
