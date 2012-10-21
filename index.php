@@ -71,7 +71,7 @@ The Assassins Staff";
 		mail("imatt711@me.com", $subject, $message, $headers);
 	}*/
 	
-	if ($target)
+	if (false) //($target)
 	{
 
 		echo("<h1>Target Information</h1>");
