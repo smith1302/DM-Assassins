@@ -4,12 +4,15 @@ include('checkSession.php');
 check();
 include('getTeam.php');
 include("dashboard.php");
+include 'Mobile_Detect.php';
+
 
 
 ?>
 
 <html>
 <head>
+
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <link href='http://fonts.googleapis.com/css?family=Kameron:700,400' rel='stylesheet' type='text/css'>
 
@@ -37,11 +40,11 @@ connect();
 
 //get user's target	
 
-	$result = mysql_query("SELECT * FROM $table where username ='$username'");	
+	$result = mysql_query("SELECT * FROM $table where username =$username");	
 	$alive = mysql_result($result,0, "alive");	
 	$target = mysql_result($result,0, "target");
 	$myPin = mysql_result($result,0, "pin");
-
+	$showButton = mysql_result($result,0, "showbutton");
 // in case of circular targetting
 /*	if ($target == $myPin)
 	{
@@ -79,6 +82,7 @@ The Assassins Staff";
 		//get's target info from server
 		
 		$result = mysql_query("SELECT * FROM $table where pin = $target");
+
 		$targetName = mysql_result($result,0,"name");
 		$targetFacebook = mysql_result($result,0,"facebook");
 		$targetEmail = mysql_result($result,0,"email");
@@ -89,7 +93,7 @@ The Assassins Staff";
 
 		//prints target info
 
-		echo("<p>Name: ".$targetName);
+		echo("<div id='info'><p>Name: ".$targetName);
 		echo('<br />Facebook: <a href="http://facebook.com/'.$targetFacebook.'">http://facebook.com/'.$targetFacebook.'</a>');
 		if (strlen($targetTwitter))
 			echo('<br />Twitter: <a href="http://twitter.com/'.$targetTwitter.'">http://twitter.com/'.$targetTwitter.'</a>');
@@ -97,7 +101,7 @@ The Assassins Staff";
 		echo('<br />Team: '.$outputTeam.'</p>');
 
 		$overallResult = mysql_query("Select * FROM users where usertype=1 and team=$team");
-		if (mysql_num_rows($result))
+		if (mysql_num_rows($overallResult))
 			$overallEmail = mysql_result($overallResult,0,"email");
 		else
 			$overallEmail = "sanchezj@floridadm.org";
@@ -117,16 +121,23 @@ The Assassins Staff";
 			echo('<br />');
 		}*/
 
-		echo('<p>
+		echo('</div><p>
 		If you have killed your target<br />
 		please enter their pin here:</p>
 		<form action="killTarget.php" method="post">
 		<input type="text" name="targetPin" /><br />
-		<input type="submit" value="Kill Target" /><br /><br />');
+		<input type="submit" value="Kill Target" /></form><br /><br />');
 		
 		
 		$result = mysql_query("SELECT * FROM $table where team=$team AND usertype = 1");
+		$detect = new Mobile_Detect();
 		
+		
+		
+		if (($showButton) && ! ($detect->isMobile()))
+		{
+			echo('<div style="margin:-10px 0 20px 0"><div id="bigbutton" class="round">Big Red<br />Button</div></div><br />');
+		}
 				echo("If your target's Facebook is inaccessible you can email<br /> their overall at: <a href='mailto:$overallEmail'>$overallEmail</a>");
 	}
 	else if ($alive)
@@ -148,6 +159,44 @@ echo('<br/>');
 echo($_SESSION['status']);
 unset($_SESSION['status']);
 ?>
+
+<script type="text/javascript">
+
+$('#bigbutton').click(function(){
+	
+	var data = {
+		'pin' : <?php echo $myPin; ?>
+	}
+	
+	$.post('bigButton.php', data, function(output) {
+	
+		if (output != 0)
+		{
+			data = {
+				'pin' : output
+				}
+			$.post('getUser.php', data, function(newUser){
+		
+				$('#info').fadeOut(0);
+				console.log(newUser);
+				newUser = $.parseJSON(newUser);
+				var twitterInfo = '';
+				if (newUser['twitter'])
+				{
+					twitterInfo = '<br />Twitter: <a href="http://twitter.com/'+ newUser['twitter'] + '">http://twitter.com/'+newUser['twitter']+'</a>';
+				}
+				$('#info').html('<p>Name: '+newUser['name'] + '<br />Facebook: <a href="http://facebook.com/' + newUser['facebook'] +'">http://facebook.com/'+ newUser['facebook'] + '</a>'+ twitterInfo + ' <br />Email: <a href="mailto:'+ newUser['email'] + '">'+ newUser['email'] + '</a><br />Team: '+newUser['team']+'</p><br /><img src ="uploads/'+newUser['img']+'" class="overall_img" />');
+				$('#info').fadeIn(1000);
+			});
+		}
+	});	
+	$(this).fadeOut(1000);
+});
+
+
+</script>
+
+
 </div>
 <div class="footer">
 	<div class="footer_content">
