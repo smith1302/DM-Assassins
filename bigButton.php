@@ -33,53 +33,62 @@ if (mysql_num_rows($test)!=0)
 	$targetPin =  mysql_query("SELECT target FROM users where pin = $pin");
 	$targetPin = mysql_result($targetPin,0,"target");
 	
-	mysql_query("UPDATE users set target = $newTargetPin, showbutton = 0 WHERE pin = $pin");
-	mysql_query("UPDATE users set target = $pin, changed = 1 WHERE pin = $newAssassinPin");
-	mysql_query("UPDATE users set target = $targetPin where pin = $assassinPin");
+	if ($newAssassinPin && $newTargetPin && $targetPin && $assassinPin)
+	{
+		mysql_query("UPDATE users set target = $newTargetPin, showbutton = 0 WHERE pin = $pin");
+		mysql_query("UPDATE users set target = $pin, changed = 1 WHERE pin = $newAssassinPin");
+		mysql_query("UPDATE users set target = $targetPin where pin = $assassinPin");
 	
-	$result =  mysql_query("SELECT * FROM users where pin = $assassinPin");
-	$name = mysql_result($result,0,"name");
-	$email = mysql_result($result,0,"email");
-	
-	
-		$subject = 'You Have A New Target';
-		$message = "Hello $name,
+		$result =  mysql_query("SELECT * FROM users where pin = $assassinPin");
+		$name = mysql_result($result,0,"name");
+		$email = mysql_result($result,0,"email");
 		
-		Because another captain was inconsiderate you now have a new target. You may research this person on the assassins website.
 		
-	Sincerely,
-	The Gamemaker";
-		$headers = 'From: assassins@floridadm.org' . "\r\n" .
-		    'X-Mailer: PHP/' . phpversion();
-	
-		mail($email, $subject, $message, $headers);
-	
-	$result =  mysql_query("SELECT * FROM users where pin = $newAssassinPin");
-	$name = mysql_result($result,0,"name");
-	$email = mysql_result($result,0,"email");
-	
-	
-		$subject = 'You Have A New Target';
-		$message = "Hello $name,
+			$subject = 'You Have A New Target';
+			$message = "Hello $name,
+			
+			Because another captain was inconsiderate you now have a new target. You may research this person on the assassins website.
+			
+		Sincerely,
+		The Gamemaker";
+			$headers = 'From: assassins@floridadm.org' . "\r\n" .
+			    'X-Mailer: PHP/' . phpversion();
 		
-		Because another captain was inconsiderate you now have a new target. You may research this person on the assassins website.
+			mail($email, $subject, $message, $headers);
 		
-	Sincerely,
-	The Gamemaker";
-		$headers = 'From: assassins@floridadm.org' . "\r\n" .
-		    'X-Mailer: PHP/' . phpversion();
-	
-		mail($email, $subject, $message, $headers);
-	
-	
-	/*echo ("\nAssassin Pin: $assassinPin\n");
-	echo ("Target Pin: $targetPin\n");
-	echo ("NewAssassinPin: $newAssassinPin\n");
-	echo ("NewTargetPin: $newTargetPin\n");*/
-	echo ($newTargetPin);
+		$result =  mysql_query("SELECT * FROM users where pin = $newAssassinPin");
+		$name = mysql_result($result,0,"name");
+		$email = mysql_result($result,0,"email");
+		
+		
+			$subject = 'You Have A New Target';
+			$message = "Hello $name,
+			
+			Because another captain was inconsiderate you now have a new target. You may research this person on the assassins website.
+			
+		Sincerely,
+		The Gamemaker";
+			$headers = 'From: assassins@floridadm.org' . "\r\n" .
+			    'X-Mailer: PHP/' . phpversion();
+		
+			mail($email, $subject, $message, $headers);
+		
+		
+		/*echo ("\nAssassin Pin: $assassinPin\n");
+		echo ("Target Pin: $targetPin\n");
+		echo ("NewAssassinPin: $newAssassinPin\n");
+		echo ("NewTargetPin: $newTargetPin\n");*/
+		echo ($newTargetPin);
+	}
+	else
+	{
+		mysql_query("UPDATE users set showbutton = 0 where pin = $pin");
+		echo 0;
+	}
 }
 else
 {
+	mysql_query("UPDATE users set showbutton = 0 where pin = $pin");
 	echo 0;
 }
 
