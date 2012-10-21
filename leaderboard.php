@@ -186,7 +186,7 @@ $(document).ready(function()
         
         $("#teamStats").tablesorter({
 	        
-   	        sortList: [[3,1]]
+   	        sortList: [[5,1]]
 	        
         }); 
         
