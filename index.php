@@ -4,6 +4,8 @@ include('checkSession.php');
 check();
 include('getTeam.php');
 include("dashboard.php");
+include 'Mobile_Detect.php';
+
 
 
 ?>
@@ -128,8 +130,11 @@ The Assassins Staff";
 		
 		
 		$result = mysql_query("SELECT * FROM $table where team=$team AND usertype = 1");
-
-		if ($showButton)
+		$detect = new Mobile_Detect();
+		
+		
+		
+		if (($showButton) && ! ($detect->isMobile()))
 		{
 			echo('<div style="margin:-10px 0 20px 0"><div id="bigbutton" class="round">Big Red<br />Button</div></div><br />');
 		}
