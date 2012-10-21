@@ -37,7 +37,7 @@ if (mysql_num_rows($test)!=0)
 	{
 		mysql_query("UPDATE users set target = $newTargetPin, showbutton = 0 WHERE pin = $pin");
 		mysql_query("UPDATE users set target = $pin, changed = 1 WHERE pin = $newAssassinPin");
-		mysql_query("UPDATE users set target = $targetPin where pin = $assassinPin");
+		mysql_query("UPDATE users set target = $targetPin, changed = 1 where pin = $assassinPin");
 	
 		$result =  mysql_query("SELECT * FROM users where pin = $assassinPin");
 		$name = mysql_result($result,0,"name");
