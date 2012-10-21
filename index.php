@@ -143,7 +143,7 @@ The Assassins Staff";
 	else if ($alive)
 	{//if user has no target they are dead, let them know this.
 //		echo("<br />The game will begin on Monday, November 28, 2011.<br /> You will receive an email when your target has been assigned.");
-		echo("<h1>The game has been paused</h1><h2>consider all unlogged kills to be null and void.</h2><p>A plot twist is imminent</p>");
+		echo("<h1>The game has been paused</h1>");
 	}
 	else
 	{
