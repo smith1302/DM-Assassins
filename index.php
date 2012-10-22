@@ -110,7 +110,7 @@ The Assassins Staff";
 		$detect = new Mobile_Detect();		
 		if (($showButton) && ! ($detect->isMobile()))
 		{
-			echo('<div style="margin:10px 0 -10px 0"><div id="bigbutton" class="round">Big Red<br />Button</div></div><br />');
+			echo('<div style="margin:10px 0 -15px 0"><div id="bigbutton" class="round">Big Red<br />Button</div></div><br />');
 		}
 
 
