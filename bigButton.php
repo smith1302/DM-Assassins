@@ -18,7 +18,7 @@ if (mysql_num_rows($test)!=0)
 	{
 		$sql1 = mysql_query("Select assassin.pin, assassin.team, target.pin, target.team from users target join users as assassin on assassin.target = target.pin WHERE target.team != $myTeam AND assassin.team != $myTeam AND assassin.changed = 0 ORDER BY rand() limit 1");
 	}
-	else if (mysql_num_rows($sql1) == 0)
+	if (mysql_num_rows($sql1) == 0)
 	{
 		$sql1 = mysql_query("Select assassin.pin, assassin.team, target.pin, target.team from users target join users as assassin on assassin.target = target.pin WHERE changed=0 ORDER BY rand() limit 1");
 	}
