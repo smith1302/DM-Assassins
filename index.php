@@ -4,7 +4,7 @@ include('checkSession.php');
 check();
 include('getTeam.php');
 include("dashboard.php");
-include 'Mobile_Detect.php';
+include('Mobile_Detect.php');
 
 
 
