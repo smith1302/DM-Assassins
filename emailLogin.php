@@ -48,7 +48,7 @@ P.S. If you'd like to submit ideas for the <a href='http://twitter.com/dmassassi
 
 <p>Our game has hit a stall of late. Some of you have decided to ease your efforts to kill off your targets. As a result, the Gamemaker has decided to add a new element. If you refer to your assassins page, you will notice a big red button. This big red button will change the game for you and others, but in what way you ask? Well that can only be answered by pressing the red button. If you dare to take this risk, accept the fate that comes with it, choose to stay away from the red button, and you may have sentenced yourself to be assassinated or positioned yourself for eternal Dance Marathon glory.</p>
 
-<p>Good luck tributes,<br />
+<p>Good luck tributes.<br />
 And may the odds be ever in your favor.</p>";
 
 /*		$headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -74,8 +74,8 @@ And may the odds be ever in your favor.</p>";
 
 Our game has hit a stall of late. Some of you have decided to ease your efforts to kill off your targets. As a result, the Gamemaker has decided to add a new element. If you refer to your assassins page, you will notice a big red button. This big red button will change the game for you and others, but in what way you ask? Well that can only be answered by pressing the red button. If you dare to take this risk, accept the fate that comes with it, choose to stay away from the red button, and you may have sentenced yourself to be assassinated or positioned yourself for eternal Dance Marathon glory.
 
-Good luck tributes,
-and may the odds be ever in your favor.";
+Good luck tributes.
+And may the odds be ever in your favor.";
 		
 /*		$mail->AltBody    = "Hello $name,
 You have been assigned your first target. It is $targetName on the $targetTeam team.

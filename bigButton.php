@@ -49,7 +49,8 @@ if (mysql_num_rows($test)!=0)
 
 A daring tribute has decided to press the red button. Not only did they change their fate, but they subsequently altered yours. You have been assigned to a new target.
 
-Good luck pursuing your newest victim and may the odds be ever in your favor.";
+Good luck pursuing your newest victim.
+And may the odds be ever in your favor.";
 
 			$headers = 'From: assassins@floridadm.org' . "\r\n" .
 			    'X-Mailer: PHP/' . phpversion();
@@ -66,7 +67,8 @@ Good luck pursuing your newest victim and may the odds be ever in your favor.";
 
 A daring tribute has decided to press the red button. Not only did they change their fate, but they subsequently altered yours. You have been assigned to a new target.
 
-Good luck pursuing your newest victim and may the odds be ever in your favor.";
+Good luck pursuing your newest victim.
+And may the odds be ever in your favor.";
 
 			$headers = 'From: assassins@floridadm.org' . "\r\n" .
 			    'X-Mailer: PHP/' . phpversion();
