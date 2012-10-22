@@ -45,11 +45,11 @@ if (mysql_num_rows($test)!=0)
 		
 		
 			$subject = 'You Have A New Target';
-			$message = "<p>Tribute,</p>
+			$message = "Tribute,
 
-<p>A daring tribute has decided to press the red button. Not only did they change their fate, but they subsequently altered yours. You have been assigned to a new target.</p>
+A daring tribute has decided to press the red button. Not only did they change their fate, but they subsequently altered yours. You have been assigned to a new target.
 
-<p>Good luck pursuing your newest victim and may the odds be ever in your favor.</p>";
+Good luck pursuing your newest victim and may the odds be ever in your favor.";
 
 			$headers = 'From: assassins@floridadm.org' . "\r\n" .
 			    'X-Mailer: PHP/' . phpversion();
@@ -62,11 +62,11 @@ if (mysql_num_rows($test)!=0)
 		
 		
 			$subject = 'You Have A New Target';
-			$message = "<p>Tribute,</p>
+			$message = "Tribute,
 
-<p>A daring tribute has decided to press the red button. Not only did they change their fate, but they subsequently altered yours. You have been assigned to a new target.</p>
+A daring tribute has decided to press the red button. Not only did they change their fate, but they subsequently altered yours. You have been assigned to a new target.
 
-<p>Good luck pursuing your newest victim and may the odds be ever in your favor.</p>";
+Good luck pursuing your newest victim and may the odds be ever in your favor.";
 
 			$headers = 'From: assassins@floridadm.org' . "\r\n" .
 			    'X-Mailer: PHP/' . phpversion();
