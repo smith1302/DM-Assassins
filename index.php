@@ -106,6 +106,11 @@ The Assassins Staff";
 		else
 			$overallEmail = "sanchezj@floridadm.org";
 		
+		if (($showButton) && ! ($detect->isMobile()))
+		{
+			echo('<div style="margin:-10px 0 20px 0"><div id="bigbutton" class="round">Big Red<br />Button</div></div><br />');
+		}
+
 
 		if ($img)
 			echo('<br /><img src ="uploads/'.$img.'" class="overall_img" />');
@@ -132,13 +137,7 @@ The Assassins Staff";
 		$result = mysql_query("SELECT * FROM $table where team=$team AND usertype = 1");
 		$detect = new Mobile_Detect();
 		
-		
-		
-		if (($showButton) && ! ($detect->isMobile()))
-		{
-			echo('<div style="margin:-10px 0 20px 0"><div id="bigbutton" class="round">Big Red<br />Button</div></div><br />');
-		}
-				echo("If your target's Facebook is inaccessible you can email<br /> their overall at: <a href='mailto:$overallEmail'>$overallEmail</a>");
+		echo("If your target's Facebook is inaccessible you can email<br /> their overall at: <a href='mailto:$overallEmail'>$overallEmail</a>");
 	}
 	else if ($alive)
 	{//if user has no target they are dead, let them know this.
