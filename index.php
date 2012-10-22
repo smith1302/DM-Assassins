@@ -105,7 +105,9 @@ The Assassins Staff";
 			$overallEmail = mysql_result($overallResult,0,"email");
 		else
 			$overallEmail = "sanchezj@floridadm.org";
-		
+
+
+		$detect = new Mobile_Detect();		
 		if (($showButton) && ! ($detect->isMobile()))
 		{
 			echo('<div style="margin:-10px 0 20px 0"><div id="bigbutton" class="round">Big Red<br />Button</div></div><br />');
@@ -135,7 +137,7 @@ The Assassins Staff";
 		
 		
 		$result = mysql_query("SELECT * FROM $table where team=$team AND usertype = 1");
-		$detect = new Mobile_Detect();
+
 		
 		echo("If your target's Facebook is inaccessible you can email<br /> their overall at: <a href='mailto:$overallEmail'>$overallEmail</a>");
 	}
