@@ -35,14 +35,21 @@ The Assassins Team<br />
 P.S. If you'd like to submit ideas for the <a href='http://twitter.com/dmassassins'>twitter feed</a>. You can submit them <a href='http://assassins.dmcaptains.com/waysYouCanDie.php'>here</a>.</p>
 		";*/
 		
-		$message = "<p>Tributes,</p>
+		/*$message = "<p>Tributes,</p>
 
 <p>The Gamemaker is disappointed with your performance. You may consider yourself lucky, or even skilled for making it out alive through the first quarter deaths. However we don't see it as such, we have decided that your pursuit of your current targets has failed. In response, the Gamemaker has decided upon a role reversal. These targets that you found so difficult to find, now target you. You may be thinking, \"I now know who targets me,\" but don't let this give you a false sense of security because you are not alone.</p>
 
 <p>You may log into the assassins website to see your new target.</p>
 
 <p>Good luck tributes, and may the odds be ever in your favor!</p>
-<p>-The Gamemaker</p>";
+<p>-The Gamemaker</p>";*/
+
+		$message ="<p>Good day Tributes,</p>
+
+<p>Our game has hit a stall of late. Some of you have decided to ease your efforts to kill off your targets. As a result, the Gamemaker has decided to add a new element. If you refer to your assassins page, you will notice a big red button. This big red button will change the game for you and others, but in what way you ask? Well that can only be answered by pressing the red button. If you dare to take this risk, accept the fate that comes with it, choose to stay away from the red button, and you may have sentenced yourself to be assassinated or positioned yourself for eternal Dance Marathon glory.</p>
+
+<p>Good luck tributes,<br />
+and may the odds be ever in your favor.</p>"
 
 /*		$headers  = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
