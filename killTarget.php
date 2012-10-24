@@ -20,7 +20,7 @@ if ($target == $targetPin)
 	$result = mysql_query("SELECT * FROM $table where pin = $target");
 	$assassinName = mysql_result($result,0, "name");
 	$newTarget = mysql_result($result,0, "target");
-	mysql_query("UPDATE $table SET target = $newTarget where username = '$username'");
+	mysql_query("UPDATE $table SET target = $newTarget, lastkilled=CURRENT_TIMESTAMP where username = '$username'");
 	
 	//mark target as dead
 	mysql_query("UPDATE $table SET target = 0, alive = 0 where pin = $target");
