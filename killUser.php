@@ -16,7 +16,7 @@ $hisTarget = mysql_result($result,0,"target");
 $result = mysql_query("SELECT * FROM $table where target = $pin");
 $kills = mysql_result($result,0,"killed") + 1;
 $username = mysql_result($result,0,"username");
-$result = mysql_query("UPDATE $table SET target = $hisTarget, killed = $kills where username = '$username'");
+$result = mysql_query("UPDATE $table SET target = $hisTarget, killed = $kills, lastkilled = CURRENT_TIMESTAMP  where username = '$username'");
 
 //kill User
 $result = mysql_query("UPDATE $table SET target = 0, alive = 0 where pin = $pin");
