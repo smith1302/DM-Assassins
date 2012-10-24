@@ -46,10 +46,16 @@ connect();
 	$myPin = mysql_result($result,0, "pin");
 	$showButton = mysql_result($result,0, "showbutton");
 
+	if ($target)
+	{
 
-	$targetInfo = mysql_query("SELECT target FROM $table where pin=$target");
-	$targetTarget = mysql_result($targetInfo,0,"target");
-	
+		$targetInfo = mysql_query("SELECT target FROM $table where pin=$target");
+		$targetTarget = mysql_result($targetInfo,0,"target");
+	}
+	else
+	{
+		$targetTarget = 0;
+	}
 	
 	if (($target) && ($targetTarget != $myPin))
 	{
