@@ -56,7 +56,7 @@ And may the odds be ever in your favor.</p>";*/
 <p>Gainesville has been taken over by a swarm of <a href='http://thehungergames.wikia.com/wiki/Tracker_jacker'>Tracker jackers</a>. Unfortunately for you, you have been stung. Alas, there is an antidote! However it can only be retrieved if you kill your target in the next 48 hours. Act quickly for if the clock strikes zero, so will your chance to be the champion of DM Assassins.  But there is a catch, to test the will of friendship and team unity, the gamemaster has decided that your newest target will be someone on your own team. In other words, kill an ally or be killed, the choice is yours. Enjoy your newest plot twist Tributes, it may be your last. As always, good luck and may the odds be ever in your favor.</p>
 
 <p>Truly yours,<br />
-The Gamemaker</p><br />
+The Gamemaker</p>
 <p>P.S. After further thought, if you and one other assassin remain as the lone survivors on your team, you shall be protected until the final stages of the game. Consider it a little reward for doing what the rest of your team could not.</p>";
 
 /*		$headers  = 'MIME-Version: 1.0' . "\r\n";
