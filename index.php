@@ -45,33 +45,13 @@ connect();
 	$target = mysql_result($result,0, "target");
 	$myPin = mysql_result($result,0, "pin");
 	$showButton = mysql_result($result,0, "showbutton");
-// in case of circular targetting
-/*	if ($target == $myPin)
-	{
-		$repairSQL = "SELECT * FROM $table WHERE pin > 100 AND pin != $myPin AND alive =1 ORDER BY RAND() LIMIT 1";
-		$repair=mysql_query($repairSQL);
-		$theirTarget = mysql_result($repair,0,"target");
-		$theirPin  = mysql_result($repair,0,"pin");
-		$theirName  = mysql_result($repair,0,"name");
-		$theirEmail = mysql_result($repair,0,"email");
-		mysql_query("UPDATE users SET target = $theirTarget where pin = $myPin");
-		mysql_query("UPDATE users SET target = $myPin where pin = $theirPin");
 
-		$subject = 'You Have A New Target';
-		$message = "Hello $name,
 
-	Due to unforeseen circumstances we have assigned you a new target. You may view your new target's information on your account at http://sgiordano.info/assassins
-
-FTK!
-The Assassins Staff";
-		$headers = 'From: assassins@floridadm.org' . "\r\n" .
-				    'X-Mailer: PHP/' . phpversion();
-
-		mail($theirEmail, $subject, $message, $headers);
-		mail("imatt711@me.com", $subject, $message, $headers);
-	}*/
+	$targetInfo = mysql_query("SELECT target FROM $table where pin=$target");
+	$targetTarget = mysql_result($targetInfo,0,"target");
 	
-	if ($target)
+	
+	if (($target) && ($targetTarget != $myPin))
 	{
 
 		echo("<h1>Target Information</h1>");
@@ -119,14 +99,6 @@ The Assassins Staff";
 		else
 			echo('<br />Your target has not uploaded a picture yet.');
 		
-/*		if ($target == 917)
-		{
-			echo("<br /><p class='special'>Dear Assassin,<br />I'll be in Club West all week.<br />Come at me.<br />Sincerely,<br/>Matt Gerstman</p>");
-		}
-		else
-		{
-			echo('<br />');
-		}*/
 
 		echo('</div><p>
 		If you have killed your target<br />
@@ -140,6 +112,10 @@ The Assassins Staff";
 
 		
 		echo("If your target's Facebook is inaccessible you can email<br /> their overall at: <a href='mailto:$overallEmail'>$overallEmail</a>");
+	}
+	else if ($targetTarget == $myPin)
+	{
+		echo("<p style='margin: 10 20px'>You and your target are the last two standing from your team. As such, you have been quarantined until the final round stay tuned for more</p>");
 	}
 	else if ($alive)
 	{//if user has no target they are dead, let them know this.
