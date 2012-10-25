@@ -26,8 +26,15 @@ while (strlen($fun)>139)
 
 }
 
-	mysql_query('UPDATE tweets set used = 1 where pin = '.$twitterPin);
-	tweet($fun);
+	if (($pin) == 647) 
+	{
+		tweet("Sam Burd died from a slushie related sugar overdose, it was by far the cutest death in recorded history.");
+	}
+	else
+	{
+		mysql_query('UPDATE tweets set used = 1 where pin = '.$twitterPin);
+		tweet($fun);
+	}
 }
 
 
