@@ -19,13 +19,13 @@ echo('<div><h1>Tweet List</h1>');
 
 include_once("connectToServer.php");
 connect();
-$result = mysql_query("SELECT COUNT(method), SUM(used), SUM(alive) FROM tweets");
+$result = mysql_query("SELECT COUNT(method), SUM(used) FROM tweets");
 $total = mysql_result($result,0,'COUNT(method)');
 $used =  mysql_result($result,0,'SUM(used)');
 $unused = $total - $used;
-$users = mysql_query("SELECT COUNT(pin) FROM users");
+$users = mysql_query("SELECT COUNT(pin), SUM(alive) FROM users");
 $users = mysql_result($users,0, "COUNT(pin)");
-$alive = mysql_result($result,0, "SUM(alive)");
+$alive = mysql_result($users,0, "SUM(alive)");
 if ($alive < $unused)
 	$needed = $alive - $unused;
 else
