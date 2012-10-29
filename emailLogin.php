@@ -17,6 +17,14 @@
 		$target = $user['target'];		
 		$sql3 = "SELECT * FROM users WHERE pin = $target";
 		$sql3 = mysql_query($sql3);
+
+		$mesage = "<p>TRIBUTES,</p>
+
+<p>Your efforts in killing have angered the Gamemaker to the point he needed a break. After a long weekend, the Gamemaker has finally decided to resume play. However, to prevent any boredom, you will have 48 hours from the time this email is sent out to eliminate your target. Fail to complete this task and you will be eliminated by me. I will not tolerate any of you trying to weasel your way through to the end. It is simple, kill or be killed. Good luck and may the odds be ever in your favor.</p>
+
+<p>Truly yours,<br />
+The Gamemaker</p>";
+
 		/*$targetName = mysql_result($sql3, 0, 'name');
 		$targetTeam = mysql_result($sql3, 0, 'team');
 		$targetTeam = getTeam($targetTeam);*/
@@ -51,13 +59,13 @@ P.S. If you'd like to submit ideas for the <a href='http://twitter.com/dmassassi
 <p>Good luck tributes.<br />
 And may the odds be ever in your favor.</p>";*/
 
-		$message="<p>Tributes,</p>
+		/*$message="<p>Tributes,</p>
 
 <p>Gainesville has been taken over by a swarm of <a href='http://thehungergames.wikia.com/wiki/Tracker_jacker'>Tracker jackers</a>. Unfortunately for you, you have been stung. Alas, there is an antidote! However it can only be retrieved if you kill your target in the next 48 hours. Act quickly for if the clock strikes zero, so will your chance to be the champion of DM Assassins.  But there is a catch, to test the will of friendship and team unity, the gamemaster has decided that your newest target will be someone on your own team. In other words, kill an ally or be killed, the choice is yours. Enjoy your newest plot twist Tributes, it may be your last. As always, good luck and may the odds be ever in your favor.</p>
 
 <p>Truly yours,<br />
 The Gamemaker</p>
-<p>P.S. After further thought, if you and one other assassin remain as the lone survivors on your team, you shall be protected until the final stages of the game. Consider it a little reward for doing what the rest of your team could not.</p>";
+<p>P.S. After further thought, if you and one other assassin remain as the lone survivors on your team, you shall be protected until the final stages of the game. Consider it a little reward for doing what the rest of your team could not.</p>";*/
 
 /*		$headers  = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
@@ -78,15 +86,12 @@ The Gamemaker</p>
 		
 		$mail->Subject    = "Plot Twist";
 		
-		$mail->AltBody = "Tributes,
+		$mail->AltBody = "TRIBUTES,
 
-Gainesville has been taken over by a swarm of Tracker jackers. Unfortunately for you, you have been stung. Alas, there is an antidote! However it can only be retrieved if you kill your target in the next 48 hours. Act quickly for if the clock strikes zero, so will your chance to be the champion of DM Assassins.  But there is a catch, to test the will of friendship and team unity, the gamemaster has decided that your newest target will be someone on your own team. In other words, kill an ally or be killed, the choice is yours. Enjoy your newest plot twist Tributes, it may be your last. As always, good luck and may the odds be ever in your favor.
+Your efforts in killing have angered the Gamemaker to the point he needed a break. After a long weekend, the Gamemaker has finally decided to resume play. However, to prevent any boredom, you will have 48 hours from the time this email is sent out to eliminate your target. Fail to complete this task and you will be eliminated by me. I will not tolerate any of you trying to weasel your way through to the end. It is simple, kill or be killed. Good luck and may the odds be ever in your favor. 
 
-Truly yours,
-The Gamemaster
-
-P.S. After further thought, if you and one other assassin remain as the lone survivors on your team, you shall be protected until the final stages of the game. Consider it a little reward for doing what the rest of your team could not.
-";
+Truly yours, 
+The Gamemaker";
 		
 /*		$mail->AltBody    = "Hello $name,
 You have been assigned your first target. It is $targetName on the $targetTeam team.
