@@ -18,7 +18,7 @@
 		$sql3 = "SELECT * FROM users WHERE pin = $target";
 		$sql3 = mysql_query($sql3);
 
-		$mesage = "<p>TRIBUTES,</p>
+		$message = "<p>TRIBUTES,</p>
 
 <p>Your efforts in killing have angered the Gamemaker to the point he needed a break. After a long weekend, the Gamemaker has finally decided to resume play. However, to prevent any boredom, you will have 48 hours from the time this email is sent out to eliminate your target. Fail to complete this task and you will be eliminated by me. I will not tolerate any of you trying to weasel your way through to the end. It is simple, kill or be killed. Good luck and may the odds be ever in your favor.</p>
 
