@@ -57,7 +57,7 @@ connect();
 		$targetTarget = 0;
 	}
 	
-	if (false)//(($target) && ($targetTarget != $myPin))
+	if (($target) && ($targetTarget != $myPin))
 	{
 
 		echo("<h1>Target Information</h1>");
