@@ -1,5 +1,4 @@
-<?php
-/*Dance Marathon Assassins
+Dance Marathon Assassins
     Copyright 2012 Dance Marathon at the University of Florida
 
 This product includes software developed by the Dance Marathon at the University of Florida 2013 Technology Team.
@@ -37,5 +36,4 @@ This software includes the following open source plugins listed below:
 	Title:		twitteroauth
 	Link:		https://github.com/abraham/twitteroauth
 	Copyright:	Copyright (c) 2009 Abraham Williams
-	License:	http://www.opensource.org/licenses/mit-license.php*/
-	
+	License:	http://www.opensource.org/licenses/mit-license.php
