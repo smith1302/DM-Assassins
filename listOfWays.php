@@ -65,7 +65,7 @@ $used =  mysql_result($result,0,'SUM(used)');
 $unused = $total - $used;
 $users = mysql_query("SELECT COUNT(pin), SUM(alive) FROM users");
 $alive = mysql_result($users,0, "SUM(alive)");
-if ($alive < $unused)
+if ($alive > $unused)
 	$needed = $alive - $unused;
 else
 	$needed = 0;
